@@ -1,15 +1,7 @@
-import { Component } from '@angular/core';
-import { Category } from './category'
+import { Component, OnInit } from '@angular/core';
 
-
-
-
-const CATEGORIES: Category[] = [
-  {id: 0, name: 'War News'},
-  {id: 1, name: 'Sport News'},
-  {id: 2, name: 'Life News'}
-];
-
+import { Category } from './category';
+import { CategoryService } from './category.service'
 
 @Component({
   selector: 'app-root',
@@ -18,7 +10,21 @@ const CATEGORIES: Category[] = [
 })
 
 export class AppComponent {
-  categories = CATEGORIES;
+  categories : Category[];
   selectedCategory: Category;
+
+  constructor(private catService: CategoryService) { }
+
+  onSelect(cat: Category):void{
+    this.selectedCategory = cat;
+  }
+
+  getCategories(): void{
+    this.categories=this.catService.getCat();
+  }
+
+  ngOnInit():void{
+    this.getCategories();
+  }
 }
 

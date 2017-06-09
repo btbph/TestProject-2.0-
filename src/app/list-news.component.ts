@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import {News} from './news'
-import {Category} from './category'
+import {News} from './news';
+import {Category} from './category';
 
 const NEWS: News[] = [
   {date: "2017",id: 0,title:"News1"},
@@ -16,4 +16,5 @@ const NEWS: News[] = [
 
 export class ListNewsComponent{
   @Input() category:Category; //нужен только id
+  mockOfNews = NEWS;
 }
