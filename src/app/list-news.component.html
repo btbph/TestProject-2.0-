@@ -1,5 +1,10 @@
-<div *ngIf="category">
-  <li *ngFor="let to of mockOfNews">
-    <span>{{to.id}}</span>{{to.title}}
+
+  <li class="newsli" *ngFor="let to of mockOfNews">
+    <a (click)="checkListIsEmpty()" [routerLink]="['/detail',to.id]">
+      <div class="newsTitle">{{to.title}}  </div>
+      <div class="newsDescription"> {{to.shortDescription}} </div>
+      <div class="newsDate">{{to.date | date}}</div>
+    </a>
   </li>
-</div>
+
+<div class="newsButton" *ngIf="amountOfNews == 10" (click)="getListNewsOnPage()">Еще новости</div>

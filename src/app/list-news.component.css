@@ -1,0 +1,46 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited{
+  color: black;
+}
+
+.newsli{
+  list-style-type: none;
+  padding: 10px;
+}
+
+.newsli:hover{
+  background-color: bisque;
+}
+
+.newsTitle{
+  text-align: center;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.newsDate{
+  text-align: right;
+}
+
+.newsDescription{
+  text-align: center;
+}
+
+.newsButton{
+  border: 1px solid;
+  width:10%;
+  height: 5%;
+  font-size: 13pt;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsButton:hover{
+  background-color: bisque;
+  border-color: bisque;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited{
+  color:black;
+}
+
+.category{
+  text-decoration: none;
+  margin: 20px;
+  list-style-type: none;
+  font-size: 15pt;
+  font-weight: bold;
+}

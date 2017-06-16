@@ -1,0 +1,7 @@
+
+<div class="detailContent" *ngIf="this.news != undefined">
+  <div class="detailTitle">{{news.title}}</div>
+  <div [innerHTML]=news.fullDescription></div>
+</div>
+
+<div class="goBackButton" (click)="goBack()">Back</div>
