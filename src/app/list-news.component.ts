@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { Params, ActivatedRoute} from '@angular/router'
+import { Params, ActivatedRoute, Router} from '@angular/router'
 
 import {News} from './news';
 import { NewsService } from './news.service'
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap'
   selector:'list-news',
   templateUrl:'./list-news.component.html',
   providers: [NewsService],
-  styleUrls:['./list-news.component.css']
+  styleUrls:['./list-news.component.less']
 })
 
 export class ListNewsComponent implements OnInit{
@@ -21,7 +21,8 @@ export class ListNewsComponent implements OnInit{
   amountOfNews: number;
   listIsEmpry:boolean;
   constructor(private newsService: NewsService,
-              private route: ActivatedRoute){ this.amountOfPages = 0}
+              private route: ActivatedRoute,
+              private router: Router){ this.amountOfPages = 0}
 
   getListNewsOnPage() //возможно стоит отрефакторить
   {
@@ -47,6 +48,10 @@ export class ListNewsComponent implements OnInit{
       .switchMap((params: Params) => this.newsService.getCountOfNews(this.amountOfPages,+params['id']))
       .subscribe(res => this.amountOfNews = res);
 
+  }
+
+  goHome():void{
+    this.router.navigate(['/home']);
   }
 
 

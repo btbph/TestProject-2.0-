@@ -1,4 +1,4 @@
-
+<div class="newsButton" (click)="goHome()">Все категории</div>
   <li class="newsli" *ngFor="let to of mockOfNews">
     <a (click)="checkListIsEmpty()" [routerLink]="['/detail',to.id]">
       <div class="newsTitle">{{to.title}}  </div>
@@ -7,4 +7,4 @@
     </a>
   </li>
 
-<div class="newsButton" *ngIf="amountOfNews == 10" (click)="getListNewsOnPage()">Еще новости</div>
+<div class="newsButton" *ngIf="amountOfNews == 10" (click)="getListNewsOnPage()">Еще</div>

@@ -8,7 +8,7 @@ import { NewsService } from './news.service'
 @Component({
   selector: 'detail-news',
   templateUrl: './detail-news.component.html',
-  styleUrls: ['./detail-news.component.css'],
+  styleUrls: ['./detail-news.component.less'],
   providers:[NewsService]
 })
 
