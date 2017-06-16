@@ -6,5 +6,11 @@
       <div class="newsDate">{{to.date | date}}</div>
     </a>
   </li>
-
+<ul>
+  <li>Первая</li>
+  <li>Предыдущая</li>
+  <li *ngFor="let i of pages" (click)="setPage(i)"> {{i}}</li>
+  <li>Следующая</li>
+  <li>Последняя</li>
+</ul>
 <div class="newsButton" *ngIf="amountOfNews == 10" (click)="getListNewsOnPage()">Еще</div>
